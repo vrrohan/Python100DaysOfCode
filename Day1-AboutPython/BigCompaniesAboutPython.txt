@@ -1,0 +1,73 @@
+1. YouTube.com
+------------------
+"Python is fast enough for our site and allows us to produce maintainable features in record times, with a minimum of developers," said Cuong Do, Software Architect, YouTube.com.
+YouTube uses the combination of Apache Spark and Python to breathe life into its real-time analytics.
+
+
+2. Instagram
+------------------
+The company has recently moved to Python 3 and Instagram is just great example of a gigantic tech company using Python language in combination with Django (Python's framework). In order you could understand the scale, Instagram has about 400M of daily active users who share more than 95M photos and videos.
+
+The main reasons for Instagram why choose Python served this language's simplicity and popularity. In other words, this language is 'friendly' to engineers that means they can focus on user-facing features. While its popularity facilitates the searches of new developers that's an extremely important factor for the rapidly growing company
+
+Instagram choose python because - 
+a) Popularity of the language
+b) Speed of the development
+c) Developers loved it
+
+
+3. Spotify
+------------------
+Another tech giant Spotify also trusts Python and applies it in its back-end services, as well as for data analysis purposes. In more detail, the back-end of Spotify consists of a plethora of separate services that are connected by means of the messaging protocol developed in-house. Well, about 80% of these services are based on Python, while the remaining 20% on languages like Java (most part) and C or C++.
+
+The company claims the speed of development is one of the main priorities for them. That's the reason why Spotify use Python to build its music streaming service -- it just meets their development speed expectations. It's understood that any modern company processes a huge amount of data to polish its services. For this purpose, Spotify uses Hadoop -- the Java-based framework with the focus on big data.
+
+What is Python programming languages used for here ? The thing is to easier interact with Hadoop, the team developed its own Python-based package contributing to it that's called Luigi. Long story short, this package allows Spotify teams prototype complicated jobs with data in a fast way. Also, Luigi is used in couple with various machine learning algorithms to power such features as Radio and Discover.
+So, Spotify chose Python because of the speed of development and community.
+
+Spotify choose python because - 
+a) Speed of development
+b) Community
+
+
+4. Google
+--------------------
+"Python has been an important part of Google since the beginning, and remains so as the system grows and evolves. Today dozens of Google engineers use Python, and we're looking for more people with skills in this language." said Peter Norvig, director of search quality at Google, Inc. 
+
+Google choose python because -
+a) Speed of development & its vast rich libraries
+b) Top language to build large machine learning & AI applications
+c) Easy to use & loved by many developers
+
+
+5. SurveyMonkey
+--------------------
+It's one of the largest survey companies in the world that processes more than 1 million survey responses daily. 
+The main reasons why SurveyMonkey choose Python were its simplicity (easy to read as well as understand), tons of libraries allowing to build web apps faster, as well as tools facilitating working with deployment, unit testing etc. Besides, developers love Python that's an extremely important factor for hiring and retaining professionals.
+
+SurveyMonkey choose python because - 
+a) Simplicity and readability
+b) Support of variety of tools
+c) Popular among developers
+
+
+6. Facebook
+--------------------
+Facebook that applies Python largely to process images. It's quite obvious that this social network deals with huge amount of data including tons of images. The company decided to use Python as the core language for the back-end of their applications connected with image processing.
+
+Facebook choose python because - 
+a) Speed of development
+b) Simplicity
+
+
+7. Amazon 
+--------------------
+To provide its customers with accurate recommendations, Amazon analyzes their buying habits and search patterns. That's possible due to their Python machine learning engine which interacts with company's database Hadoop. So, they combine and work together in order to achieve the most efficiency and accuracy in giving recommendations.
+
+The choice fell on Python language due to the fact it's popular and has lots of features for Big Data. Moreover, Python is scalable and portable that's a big plus for the kind of solution Amazon strived to create. Python is pretty often used in combination with other technologies like Hadoop or Apache. For instance, the well-known Disney company uses Python along with Hadoop in order to manage clusters for processing of images, as well as for rendering. 
+
+Amazon choose python because -
+a) popularity of language
+b) scalability
+c) Big data ready
+

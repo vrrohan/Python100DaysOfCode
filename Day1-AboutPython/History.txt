@@ -1,0 +1,4 @@
+About Python History ?
+---------------------------
+
+1. Python was created by Guido van Rossum in 1980's. First Version of python was released in 1991. Actually he was working on some utility program for Amoeba Operating systems but soon started to realise that there is need of another programming language. 
