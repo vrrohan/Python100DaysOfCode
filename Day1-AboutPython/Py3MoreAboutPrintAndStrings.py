@@ -87,3 +87,22 @@ print(bool(-3.14))      #True
 print(bool(4.55))       #True
 print(bool(0.0))        #False
 print(bool())           #False
+
+#To get length of string use - len(), pass string inside len() methods
+#len() returns integer i.e. number of characters in string including space
+name = input("Enter your name : ")
+#Since , we cannot concatenate string + integer , we need to cast result of len() back to string using str()
+print("name length is : " + str(len(name)))
+#length of empty string is 0
+print(len(''))
+
+#Both integer & floats are numbers while Strings are text
+#Hence, 42 & 42.00 both are same, while 42 & '42' are different
+print("42==42.0 : " + str(42==42.0))                    #True
+print("42=='42' : " + str(42=='42'))                    #False
+print("42.0==0042.000 : " + str(42.0==0042.000))        #True
+
+#title() - displays each word in title case i.e. mark wayne --> Mark Wayne, where each word begins with a capital letter
+name = "mark wayne rooney"
+#prints - Mark Wayne Rooney
+print("Name is : " + name.title())
