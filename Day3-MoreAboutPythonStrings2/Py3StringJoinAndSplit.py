@@ -15,6 +15,13 @@ songList = ['My', 'Name', 'is', 'Slim', 'Shady']
 string_of_song = "---".join(songList)
 print("song name is : " + string_of_song)                       #song name is : My---Name---is---Slim---Shady
 
+#Joining two strings name1 & name2
+#Each character of name2 is joined(connected) with name1
+name1 = "Rohan"
+name2 = "123"
+print("name1.join(name2) : " + name1.join(name2))               #name1.join(name2) : 1Rohan2Rohan3
+print("name2.join(name1) : " + name2.join(name1))               #name2.join(name1) : R123o123h123a123n
+
 #The split() - method does the opposite: It’s called on a string value and returns a list of strings.
 #By default, the string 'My name is Rohan' is split wherever whitespace characters such as the space, tab, or newline characters are found.
 comment = "My name is Rohan\n This is split"
