@@ -44,3 +44,32 @@ print(name[3::3])       #prints- tyoos
 numbers = "12345"*5
 print(numbers[::5])     #prints- 11111
 print(numbers[4::5])    #prints- 55555
+
+#You can also use a negative stride to collect items in the opposite order.
+#For example, the slicing expression "hello"[::−1] returns the new string "olleh"
+#the first two bounds default to 0 and the length of the sequence
+#stride of −1 indicates that the slice should go from right to left instead of the usual left to right. The effect, therefore, is to reverse the sequence
+name = "HelloSpam"
+print(name[::-1])                   #mapSolleH
+
+#the slice S[5:1:−1] fetches the items from 2 to 5, in reverse order
+#will start from index 5, goes till index 2 & goes in reverse order
+print(name[5:1:-1])                 #Soll
+
+#you can also reverse a string using this negative string slicing
+name = "spam"
+reverseName = name[::-1]
+print("name is : " + name)                              #name is : spam
+print("reverse of name is : " + reverseName)            #reverse of name is : maps
+
+#slice string using slice(a,b) - a index included, b index excluded
+name = "HelloPython"
+print(name[slice(2,6)])                                 #prints- lloP
+print(name[slice(None, None, -1)])                      #prints- nohtyPolleH
+
+#Strings are immutable in python, it means they didn't change string itself. They return new string object
+#To make a new string value from existing string, using string slicing & concatenation
+s = "Spammy"
+s = s[:3] + "xx" + s[5:]
+#s[:3] makes Spa, s[5:] makes y
+print(s)                    #Spaxxy
