@@ -29,7 +29,7 @@ listOfPossibleSpecialCharacters = []
 if ((len(username)<5) or (len(username)>30)) :
     print("Too small username")
 else :
-    #Splittinh user's firstname & lastname into a list separated by spaces
+    #Splitting user's firstname & lastname into a list separated by spaces
     listUserName = username.split(' ')
     #We trimmed & remove spaces between user's firstname & lastname
     trimmedUserName = ''.join(listUserName)
