@@ -36,3 +36,29 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 lis = [2.3, 4.5, 6.7]
 print(sum(lis))                 #13.5
+
+#Using in & not in with lists
+#(itemToSearch in listName) will return True if item is present in list , Otherwise returns False
+#not in will return True, if item is not present in the list
+list_of_marks = [78, 89, 65, 92, 70, 56, 45, 82, 70]
+print(27 in list_of_marks)                          #False
+print(70 in list_of_marks)                          #True
+print(99 not in list_of_marks)                      #True
+
+#Convert String to list in python using :- list(stringName)
+name = "Lamborgini"
+listName = list(name)
+print(listName)                                     #['L', 'a', 'm', 'b', 'o', 'r', 'g', 'i', 'n', 'i']
+
+#Converting a list back into String using join(listName)
+newName = ''.join(listName)
+print(newName + " , type is : " + str(type(newName)))                   #Lamborgini , type is : <class 'str'>
+
+#To get max() & min() item in list use - max(listName) or min(listName)
+list_of_city = ['Noida', 'Delhi', 'Bangalore', 'Lucknow', 'Mumbai', 'Gurgaon']
+list_of_marks = [78, 89, 65, 92, 70, 56, 45, 82, 70]
+print("maximum marks : ", max(list_of_marks))                           #maximum marks :  92
+print("minimum marks : ", min(list_of_marks))                           #minimum marks :  45
+#Becus N has highest ascii value, while B has lowest ascii value
+print("max in cities : ", max(list_of_city))                            #max in cities :  Noida
+print("min in cities : ", min(list_of_city))                            #min in cities :  Bangalore
