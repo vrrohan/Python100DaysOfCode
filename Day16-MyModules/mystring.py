@@ -6,6 +6,7 @@ import re
 codePointsLower = {chr(alpha):alpha for alpha in range(97, 123)}
 #Dictionary that maintains the codepoint values of each uppercase A-Z
 codePointsUpper = {chr(alpha):alpha for alpha in range(65, 91)}
+codePointsDigits = {chr(dig):dig for dig in range(0,10)}
 
 """This method returns list of all dictinct characters in a string"""
 def getDistinctChars(string) :
