@@ -52,21 +52,57 @@ print(isBatFound)                                                               
 
 #Matching Specific Repetitions with Curly Brackets
 #If you have a group that you want to repeat a specific number of times, follow the group in your regex with a number in curly brackets.
-#For example, the regex (Ha){3} will match the string 'HaHaHa', but it will not match 'HaHa', since the latter has only two repeats of the (Ha) group.
-#Instead of one number, you can specify a range by writing a minimum, a comma, and a maximum in between the curly brackets.
-#For example, the regex (Ha){3,5} will match 'HaHaHa', 'HaHaHaHa', and 'HaHaHaHaHa'.
-#You can also leave out the first or second number in the curly brackets to leave the minimum or maximum unbounded. For example, (Ha){3,} will match three or more instances of the (Ha) group, while (Ha){,5} will match zero to five instances.
+#For example, the regex (Pie){3} will match the string 'PiePiePie', but it will not match 'PiePie', since the latter has only two repeats of the (Pie) group.
 #Curly brackets can help make your regular expressions shorter.
-#These two regular expressions match identical patterns: (Ha){3} , (Ha)(Ha)(Ha)
-#And these two regular expressions also match identical patterns: (Ha){3,5}, ((Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha)(Ha))
-haRegex = re.compile(r'(Ha){3}')
-isThreeHaFound = haRegex.search('HaHaHa')
-print(isThreeHaFound.group())                                                   #HaHaHa
-isThreeHaFound = haRegex.search('Ha')
-print(isThreeHaFound == None)                                                   #True
+pieRegex = re.compile(r'(Pie){3}')
+isThreePieFound = pieRegex.search('Hello PiePiePie')
+print(isThreePieFound.group())                                                  #PiePiePie
+isThreePieFound = pieRegex.search('Hello Elon PiePie')
+print(isThreePieFound == None)                                                  #True
+#Since (Pie){3} will match if minimum 3 Pie occurs at same time
+isThreePieFound = pieRegex.search('Hello PiePie Elon PiePiePiePiePie')
+print(isThreePieFound.group())                                                  #PiePiePie
 
-haRegex = re.compile(r'(Ha){3,5}')
-isThreeHaFound = haRegex.search('HaHaHaHa')
-print(isThreeHaFound.group())                                                   #HaHaHaHa
-isThreeHaFound = haRegex.search('today is Sunday, HaHa')
-print(isThreeHaFound==None)                                                     #True
+#There is start() & end(), start() - returns starting position of the match while end() - returns ending position of the match - 1
+isThreePieFound = pieRegex.search('Hello PiePiePielon Musk PiePiePiePiePie. Now it is 4 PiePiePiePie')
+#first match of Pie starts at index 6 & ends at index (15-1) i.e. 14
+print(isThreePieFound.start())                                                  #6
+print(isThreePieFound.end())                                                    #15
+#span() - Return a tuple containing the (start, end) positions of the match
+print(isThreePieFound.span())                                                   #(6, 15)
+
+#Instead of one number, you can specify a range by writing a minimum, a comma, and a maximum in between the curly brackets {minValue, maxValue}
+#For example, the regex (Pie){3,5} will match 'PiePiePie', 'PiePiePiePie', and 'PiePiePiePiePie'.
+pieRegex = re.compile(r'(Pie){3,5}')
+isPieFound = pieRegex.search('Hello PiePie Elon PiePiePiePiePie')
+print(isPieFound.group())                                                       #PiePiePiePiePie
+isPieFound = pieRegex.search('Hello Pie')
+print(isPieFound==None)                                                         #True
+isPieFound = pieRegex.search('Hello PiePie Elon PiePiePiePiePiePiePie')
+print(isPieFound.group())                                                       #PiePiePiePiePie
+
+#These two regular expressions match identical patterns: (Ha){3} == (Ha)(Ha)(Ha)
+#And these two regular expressions also match identical patterns: (Ha){3,5} == ((Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha)(Ha))
+#You can also leave out the first or second number in the curly brackets to leave the minimum or maximum unbounded.
+#For example, (Pie){3,} will match three or more instances of the (Pie) group, while (Pie){,5} will match zero to five instances.
+pieRegex = re.compile(r'(Pie){2,}')
+isPieFound = pieRegex.search('Hello PiePi Elon')
+print(isPieFound == None)                                                       #True
+isPieFound = pieRegex.search('Hello PiePiePie')
+print(isPieFound.group())                                                       #PiePiePie
+print(isPieFound.group(), 'found at index:', isPieFound.start(), 'ends at index:', isPieFound.end()-1)
+"""
+PiePiePie found at index: 6 ends at index: 14
+"""
+
+#Will match 0 to 3 instances of Pie
+pieRegex = re.compile(r'(Pie){,3}')
+isPieFound = pieRegex.search('Hello Elon')
+print(isPieFound.group())                                                       #
+isPieFound = pieRegex.search('PiePiePiePiePiellon')
+print(isPieFound.group())                                                       #PiePiePie
+
+#Although it contains 3 Pie, but becus of {,3} it will look for 0 to 3 instances of Pie , hence returns empty string
+isPieFound = pieRegex.search('hello Elon PiePiePiePie')
+print(isPieFound.group())                                                       #
+print(isPieFound.span())                                                        #(0, 0)
