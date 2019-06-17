@@ -40,9 +40,38 @@ def automateLoginButton(browser) :
     except Exception as e :
         print('Login Element not found', e)
 
+def createNewGuthibRepository(browser, repositoryVisibility) :
+    try :
+        time.sleep(0.8)
+        browser.find_element_by_link_text('New').click()
+        time.sleep(0.8)
+        browser.find_element_by_name('repository[name]').send_keys(repositoryName)
+        time.sleep(0.8)
+        browser.find_element_by_class_name('js-repository-readme-choice').click()
+        time.sleep(0.8)
+        if (repositoryVisibility.lower=='public') :
+            browser.find_element_by_id('repository_visibility_public').click()
+        else :
+            browser.find_element_by_id('repository_visibility_private').click()
+        time.sleep(0.8)
+        browser.find_element_by_xpath('/html/body/div[4]/main/div/form/div[3]/button').click()
+        print('repository created successfully')
+    except Exception as e :
+        print('Some Repository creating element not found', e)
+
+def getRepositoryLink(browser) :
+    try :
+        browser.find_element_by_xpath('/html/body/div[4]/div/main/div[2]/div[1]/div[3]/details[2]/summary').click()
+        time.sleep(1)
+        newGitReposLink = browser.find_element_by_xpath('/html/body/div[4]/div/main/div[2]/div[1]/div[3]/details[2]/div/div/div[1]/div[1]/div/input').get_attribute('value')
+        print(newGitReposLink)
+    except Exception as e :
+        print('Unable to find newly created repository link', e)
+
 #Github Homepage Website Link
 github_homepage_website_link = 'http://github.com/'
 repositoryName = str(input('Enter Repository Name to create : '))
+repositoryVisibility = str(input('Make Repository public or private : '))
 #Get the content from Dropbox Homepage
 githubResponse = requests.get(github_homepage_website_link)
 try :
@@ -52,7 +81,7 @@ except Exception as excp :
 #Get chromedriver to test on chrome browser
 browser = webdriver.Chrome(executable_path=r"D:\python\chromedriver_win32\chromedriver.exe")
 browser.get(github_homepage_website_link)
-browser.set_page_load_timeout(8)
+browser.set_page_load_timeout(15)
 loadAndMaximizeGithubLoginPage(browser)
 print('Login Page loaded...')
 #After Login Page is loaded, sleep for 2 seconds
@@ -61,14 +90,7 @@ automateEmailAddressOrUsername(browser)
 time.sleep(0.8)
 automateLoginPassword(browser)
 automateLoginButton(browser)
-"""time.sleep(2)
-browser.find_element_by_link_text('New').click()
-time.sleep(0.8)
-browser.find_element_by_name('repository[name]').send_keys(repositoryName)
-time.sleep(0.8)
-browser.find_element_by_class_name('js-repository-readme-choice').click()
-time.sleep(0.8)
-browser.find_element_by_link_text('Create repository').click()
-browser.find_element_by_class_name('btn btn-primary first-in-line').click()
-print('repository created successfully')
-"""
+time.sleep(2)
+createNewGuthibRepository(browser, repositoryVisibility)
+time.sleep(5)
+getRepositoryLink(browser)
