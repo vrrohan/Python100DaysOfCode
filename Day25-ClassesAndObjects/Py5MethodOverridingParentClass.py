@@ -46,3 +46,10 @@ class ElectricCar(Car) :
 tesla = ElectricCar('tesla', 'model s', 2019)
 print(tesla.get_descriptive_name())
 tesla.fill_gas_tank()
+
+class WaterCar(Car) :
+    pass
+
+ho = WaterCar('porsche', 'ps2019', 2020)
+ho.fill_gas_tank()
+print(ho.get_descriptive_name())
